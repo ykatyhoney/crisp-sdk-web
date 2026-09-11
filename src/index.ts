@@ -68,6 +68,7 @@ export type Options = {
   cookieExpire?: number
   lockMaximized?: boolean
   lockFullview?: boolean
+  disableFullview?: boolean
   safeMode?: boolean
 };
 
@@ -121,6 +122,7 @@ class Crisp {
   private cookieDomain?: string;
   private cookieExpire?: number;
   private lockFullview?: boolean;
+  private disableFullview?: boolean;
   private lockMaximized?: boolean;
   private safeMode?: boolean;
 
@@ -158,6 +160,7 @@ class Crisp {
     this.cookieDomain = options.cookieDomain;
     this.cookieExpire = options.cookieExpire;
     this.lockFullview = options.lockFullview;
+    this.disableFullview = options.disableFullview;
     this.lockMaximized = options.lockMaximized;
     this.safeMode = options.safeMode;
 
@@ -207,6 +210,10 @@ class Crisp {
 
     if (this.lockFullview) {
       window.CRISP_RUNTIME_CONFIG.lock_full_view = true;
+    }
+
+    if (this.disableFullview) {
+      window.CRISP_RUNTIME_CONFIG.disable_full_view = true;
     }
 
     if (this.lockMaximized) {

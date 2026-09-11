@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v1.2.1
+
+### New Features
+
+* Added the `disableFullview` configuration option to disable automatic full-view mode on small viewports.
+
 ## v1.2.0
 
 ### New Features
